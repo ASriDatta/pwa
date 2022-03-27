@@ -1,19 +1,4 @@
-/*var staticCacheName = "hello";
-const assets = [
-    "./"
-    "./index.html"
-    ]
-self.addEventListener("install",async e => {
-    const cache = await caches.open(staticCacheName);
-    await cache.addAll(assets);
-    return self.skipWaiting();
-  /*e.waitUntil(
-    caches.open(staticCacheName).then((cache) => {
-      return cache.addAll(assets);
-    })
-//  ); ///////
-});
-self.addEventListener("activate",(e)=>{
+/*self.addEventListener("activate",(e)=>{
     self.clients.claim();
 });
 self.addEventListener("fetch",async e => {
@@ -52,7 +37,8 @@ async function networkAndCache(req){
 const cacheName = 'hitop';
 const staticAssets = [
   './index.html',
-  './tables.html'
+  './tables.html',
+  './speak.html'
 ];
 
 self.addEventListener('install', async e => {
