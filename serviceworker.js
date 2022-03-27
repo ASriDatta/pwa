@@ -51,7 +51,8 @@ async function networkAndCache(req){
 }*/
 const cacheName = 'hitop';
 const staticAssets = [
-  './New/index.html',
+  './index.html',
+  './tables.html'
 ];
 
 self.addEventListener('install', async e => {
