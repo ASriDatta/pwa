@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, height=device-height" />
+        <style type="text/css" media="all">
+            body {
+                backdrop-filter: blur(5px);
+                background: linear-gradient(180deg,#00A3FF,#0076FF);
+                margin: 0;
+            }
+            textarea {
+                margin: 10px 10px;
+            }
+            button{
+                text-align: center;
+                align-content: center;
+                display: flex;
+                margin: 0 auto;
+            }
+            h1{
+              font-family: Sans-Serif;
+              font-weight: 400;
+              text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <textarea name="" id="text" rows="8" cols="42"></textarea><br>
+        <button id="play" type="submit">play</button><br>
+        <h1 id="display">or publishers on Medium,[3] and is regularly regarded as a blog host.</h1>
+        <script type="text/javascript">
+        const textinput = document.querySelector("#text");
+        function before(){
+        const inp = String(textinput.value);
+        let sq = inp.split(" ");
+        let mainrun = Math.round(sq.length/15);
+        if(sq.length <= 15){
+            playtext(inp,0,true);
+            return;
+        }
+        let startslice=0;
+        let endslice=15;
+        console.log(mainrun,sq)
+        var sentance={
+            0:""
+        }
+        for(var i =0;i<mainrun;i++){
+            let g =sq.slice(startslice,endslice);
+            sentance[i]=g.join(" ");
+            startslice+=15;
+            endslice+=15;
+            if(endslice>sq.length){
+                endslice=sq.length
+            }
+        }
+        console.log(sentance)
+        playtext(sentance,0,false)
+        
+        
+        }
+        const playbutton = document.getElementById("play");
+        playbutton.addEventListener('click', () =>{
+            before();
+        })
+        function playtext(text,value,booleanexp) {
+            var base = text;
+                const send = document.querySelector("#display").innerHTML=""+base[value];
+            const utterance = new SpeechSynthesisUtterance(base[value]);
+            utterance.rate = 1;
+            utterance.text=base;
+            if(booleanexp){
+                document.querySelector("#display").innerHTML=""+base;speechSynthesis.speak(utterance);
+                return;
+            }else{
+            speechSynthesis.speak(utterance)
+            }
+            utterance.onend=function(){
+                value++
+                console.log(value)
+                console.log(Object.keys(base).length)
+                if(value>=(Object.keys(base).length-1)){
+                    console.log("completed")
+            }else{
+                playtext(base,value)
+            }
+            }
+        }
+        </script>
+    </body>
+</html>
