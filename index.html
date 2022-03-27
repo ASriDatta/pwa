@@ -21,18 +21,20 @@
     </p>
     <script>
         // Register the Service Worker
-        function registerSW() {
+        console.log("hello()");
+/*fetch("index.html", {cache: "force-cache"})
+  .then(data => console.table(data))
+  .catch(err => console.table(err));*/
             if ('serviceWorker' in navigator) {
                 console.log(1)
                 try {
                     console.log(2)
-                     navigator.serviceWorker.register('serviceworker.js');
+                 navigator.serviceWorker.register('serviceworker.js');
                 }
                 catch (e) {
                     console.log('SW registration failed');
                 }
             }
-        }
     </script>
 </body>
 </html>
