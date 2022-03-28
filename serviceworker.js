@@ -71,7 +71,7 @@ self.addEventListener('activate', e => {
 });*/
 
 self.addEventListener('fetch', event => {
-  event.respondWith(cache.match("index.html"))
+  event.respondWith(cache.match(event.request.url))
 });
 
 
