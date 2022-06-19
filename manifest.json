@@ -2,7 +2,7 @@
     "name":"PWA Tutorial",
     "short_name":"asd",
     "start_url":"index.html",
-    "display":"standalone",
+    "display":"fullscreen",
     "background_color":"#5900b3",
     "theme_color":"black",
     "scope": ".",
@@ -10,12 +10,12 @@
     "icons":[
     {
     "src":"icon.png",
-    "sizes":"192x192",
+    "sizes":"760x450",
     "type":"image/png"
     },
     {
     "src":"icon.png",
-    "sizes":"192×192",
+    "sizes":"760x450",
     "type":"image/png"
     }
     ]
