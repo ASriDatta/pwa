@@ -1,9 +1,10 @@
 self.addEventListener('install', (e) => { 
    e.waitUntil( 
      caches.open('pwa-tutorial').then((cache) => cache.addAll([
-         '/index.html',
-         '/tables.html',
-         '/speak.html'
+         './',
+         './index.html',
+         './tables.html',
+         './speak.html'
      ])), 
    ); 
  }); 
