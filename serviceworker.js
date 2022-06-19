@@ -9,7 +9,7 @@ self.addEventListener('install', (e) => {
  }); 
 
 self.addEventListener('activate', e => {
-    alert('installing/updating service worker');
+    e.respondWith('index.html');
 });
   
 self.addEventListener('fetch', (e) => { 
